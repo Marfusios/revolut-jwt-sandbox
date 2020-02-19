@@ -1,0 +1,60 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test JWT generator</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Revolut JWT playground
+      </h1>
+    </header>
+
+    <main>
+      <h3>
+        Good! you've got the authorization code!
+      </h3>
+      <p>
+        This app should be used for <b>test purposes only</b> with <b>no real keys</b>! 
+      </p>
+      <p>
+        In order to create a token, please set the credentials:
+      </p>
+      <form action="/credentials" method="post" enctype="multipart/form-data"> 
+        <label>
+          
+          <div style="margin-bottom:.25rem;">
+          <b>Warning! Never send or paste your <font color="#e91e63">real private keys</font> anywhere!</b>            
+          </div>
+          Private key 
+        <input type="file" name="privateKey"/>
+        </label>
+        <input name="client_id" type="text" maxlength="100" placeholder="client_id">
+        <button type="submit">Generate token</button>
+      </form>
+    </main>
+        <a href="https://glitch.com/edit/#!/revolut-jwt-sandbox">
+     View source code
+    </a>
+  </body>
+</html>
